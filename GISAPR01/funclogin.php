@@ -9,11 +9,11 @@ function my_login($post)
     if(!empty($data1)){    
         foreach($data1 as $item){
             if($item['login']==$login && $item['password']==$Password){
-                return $item['fullname'];               
+                return $item['id'];               
             }            
-        }                
+        }                   
     }
-    return "Неверное имя или пароль";    
+    return null;    
 }
 
 function post_login($post)

@@ -126,8 +126,12 @@ CREATE TABLE `orders` (
   `deadline` date DEFAULT NULL,
   `clientid` int(11) DEFAULT NULL,
   `jobload` varchar(255) DEFAULT NULL,
-  `ordersb` int(11) DEFAULT NULL
+  `ordersb` int(11) DEFAULT NULL,
+  `idemploy` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `orders` (`id`, `numcontract`, `startcontract`, `typeorder`, `ordername`, `orderaddress`, `deadline`, `clientid`, `jobload`, `ordersb`, `idemploy`) VALUES
+(1, '1', '2021-01-16', 'РК', 'рекультивация', 'Богодухівський район, Валківська міська рада', '2021-06-16', 1, '', 4, 4 ),
 
 -- --------------------------------------------------------
 

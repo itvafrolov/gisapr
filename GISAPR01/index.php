@@ -8,8 +8,17 @@ if(!empty($_POST))
     //cохраняем данные от пользователя
     $log = my_login($_POST);
     //echo $log;
+    if(!empty($log))
+    {
+        echo $log;
+        exit;
+    }
+    else
+    {
+    $log = "nologin";
     //header("Location: {$_SERVER['PHP_SELF']}");    
-    exit;  
+    }
+    //  exit;  
     }
 }
 
@@ -124,10 +133,14 @@ if(!empty($_POST))
         <footer>
             <p>© 2021 - Система учета ГИСАПР</p>
         </footer>
+    
+    <br/><br/><br/>
+    <?php if($log==="nologin"):  ?>
+        <div class="form-group">
+        <h4><?php echo "Неверное имя или пароль, выполните вход заново."; ?></h4>
+        </div>
+    <?php endif; ?>
     </div>
-
-
-
 </body>
 </html>
 
