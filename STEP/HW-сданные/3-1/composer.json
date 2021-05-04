@@ -1,0 +1,16 @@
+{
+    "name": "vfrolov/hw",
+    "description": "Home work 3-1",
+    "authors": [
+        {
+            "name": "Frolov V",
+            "email": "frolgis@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "classes\\": "classes"
+        }
+    }
+}

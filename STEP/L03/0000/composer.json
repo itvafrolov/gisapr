@@ -1,0 +1,17 @@
+{
+    "name": "vfrolov/l03",
+    "description": "L003",
+    "authors": [
+        {
+            "name": "Frolov V",
+            "email": "frolgis@gmail.com"
+        }
+    ],
+    "require": {}, 
+"autoload": {
+    "psr-4": {
+        "classes\\":"classes",
+        "mylib\\" : "vendor/mylib"
+    }
+}
+}
