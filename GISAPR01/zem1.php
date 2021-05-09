@@ -1,4 +1,5 @@
 <?php
+
 require_once "connectdb.php";
 $res = mysqli_query($db, "SELECT * FROM clients");
 $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
@@ -35,10 +36,10 @@ $tt = "123456";
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Информация</a></li>
-                    <li><a href="#">Рабочие справочники</a></li>
+                    <li><a href="https://localhost:44315/Home/About">Информация</a></li>
+                    <li><a href="https://localhost:44315/">Рабочие справочники</a></li>
                     <li><a href="./phone.php">Телефонный справочник</a></li>
-                    <li><a href="./index.php" value="User"></a></li>
+                    <li><a href="./phone.php" value="User"></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li><a href="https://localhost:44315/Account/Register" id="registerLink">Регистрация</a></li> -->
@@ -86,3 +87,6 @@ $tt = "123456";
 </table>
 </body>
 </html>
+
+
+?>

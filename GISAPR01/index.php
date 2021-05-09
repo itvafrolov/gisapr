@@ -1,6 +1,7 @@
 <?php
 require_once "connectdb.php";
 require_once "funclogin.php";
+//require_once "zem1.php";
 if(!empty($_POST))
 {
     if($_POST['btn'] == 'Выполнить вход')
@@ -10,7 +11,8 @@ if(!empty($_POST))
     //echo $log;
     if(!empty($log))
     {
-        echo $log;
+        require_once "zem1.php";
+        //echo $log;
         exit;
     }
     else
@@ -54,14 +56,14 @@ if(!empty($_POST))
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php">ГИСАПР</a>
+                <a class="navbar-brand" href="../index.php" value="ГИСАПР"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="https://localhost:44315/Home/About">Информация</a></li>
-                    <li><a href="https://localhost:44315/">Рабочие справочники</a></li>
+                    <li><a href="#">Информация</a></li>
+                    <li><a href="#">Рабочие справочники</a></li>
                     <li><a href="./phone.php">Телефонный справочник</a></li>
-                    <li><a href="./phone.php" value="User"></a></li>
+                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li><a href="https://localhost:44315/Account/Register" id="registerLink">Регистрация</a></li> -->
@@ -118,8 +120,7 @@ if(!empty($_POST))
                     <hr>
                     <div>
                         <p>
-                            Внешние службы проверки подлинности не настроены. Обратитесть к администратору системы для 
-                            настройки входа в это приложение.
+                            В случае отсутствия учетной записи обратитесть к администратору системы для настройки входа в это приложение.
                         </p>
                     </div>
 
@@ -135,7 +136,7 @@ if(!empty($_POST))
         </footer>
     
     <br/><br/><br/>
-    <?php if($log==="nologin"):  ?>
+    <?php if($log=="nologin"):  ?>
         <div class="form-group">
         <h4><?php echo "Неверное имя или пароль, выполните вход заново."; ?></h4>
         </div>
