@@ -1,0 +1,8 @@
+SELECT * FROM `orders` WHERE id=(SELECT ordersid FROM `ordersemlp` WHERE employid=5)
+-- ------------------------
+SELECT * FROM `orders` INNER JOIN `ordersemlp`
+
+-- ----------------------
+SELECT * FROM `orders` INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid WHERE employid=5
+-- ----------------------
+SELECT * FROM `orders` INNER JOIN `clients` ON orders.clientid=clients.id INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid WHERE ordersemlp.employid=5 

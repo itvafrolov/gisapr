@@ -1,9 +1,9 @@
 <?php
-
-require_once "connectdb.php";
-$res = mysqli_query($db, "SELECT * FROM clients");
+//require_once "connectdb.php";
+$res = mysqli_query($db, "SELECT * FROM `orders` INNER JOIN `clients` ON orders.clientid=clients.id INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid WHERE ordersemlp.employid=$log");
 $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
 $tt = "123456";
+echo $log;
 ?>
 
 <!DOCTYPE html>
@@ -55,38 +55,35 @@ $tt = "123456";
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Имя / Название</th>
-      <th scope="col">Юридический адрес</th>
-      <th scope="col">Идентиф. код</th>
-      <!-- <th scope="col">Паспорт / Устав</th> -->
-      <th scope="col">Контактное лицо</th>
-      <th scope="col">Телефон 1</th>
-      <th scope="col">Телефон 2</th>
-      <th scope="col">email</th>
-      <th scope="col">Примечание</th>
-      <th scope="col"> <button><a href="index2.html" /> переход</button> </th>
+      <th scope="col">Номер договора</th>
+      <th scope="col">Дата договора</th>
+      <th scope="col">Тип объекта</th>
+      <th scope="col">Название объекта</th>
+      <th scope="col">Адрес объекта</th>
+      <th scope="col">клиент</th>
+      <!-- <th scope="col">Телефон 2</th> -->
+      <!-- <th scope="col">email</th> -->
+      <!-- <th scope="col">Примечание</th> -->
+      <!-- <th scope="col"> <button><a href="index2.html" /> переход</button> </th> -->
     </tr>
   </thead>
   <tbody>
   <?php foreach($data as $item):?>
     <tr>      
       <td><?= $item['id'] ?></td>
-      <td><?= $item['name'] ?></td>
-      <td><?= $item['address'] ?></td>
-      <td><?= $item['code'] ?></td>
-      <!-- <td><?= $item['passport'] ?></td> -->
-      <td><?= $item['contact'] ?></td>      
-      <td><?= $item['phone'] ?></td>
-      <td><?= $item['phone2'] ?></td>
-      <td><?= $item['email'] ?></td>
-      <td><?= $item['note'] ?></td>
-      <td><?= $item['note2'] ?></td>
+      <td><?= $item['numcontract'] ?></td>
+      <td><?= $item['startcontract'] ?></td>
+      <td><?= $item['typeorder'] ?></td>
+      <td><?= $item['ordername'] ?></td>
+      <td><?= $item['orderaddress'] ?></td>  
+      <td><?= $item['name'] ?></td>    
+      <!-- <td><?= $item['phone'] ?></td> -->      
+      <!-- <td><?= $item['email'] ?></td> -->
+      <!-- <td><?= $item['note'] ?></td> -->
+      <!-- <td><?= $item['note2'] ?></td> -->
     </tr>
   <?php endforeach;?>
   </tbody>
 </table>
 </body>
 </html>
-
-
-?>
