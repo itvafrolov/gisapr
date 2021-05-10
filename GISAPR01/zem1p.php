@@ -1,10 +1,6 @@
 <?php 
 require_once "funclogin.php";
-
-    if (isset($_GET['fffff'])){
-      echo $log;
-    }
-
+echo $log;
 ?>
 
 
@@ -32,18 +28,17 @@ require_once "funclogin.php";
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                   
                 </button>                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                     
-                      <li> <a href="fffff">Полная информация</a></li>
-
+                    <li> <a href="zem1.php">Краткая информация</a></li>
                     <li><a href="#">Рабочие справочники</a></li>
                     <li><a href="./phone.php">Телефонный справочник</a></li>                    
                 </ul>
-                <ul class="nav navbar-nav navbar-right">                   
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- <li><a href="https://localhost:44315/Account/Register" id="registerLink">Регистрация</a></li> -->
                     <li><a href="../index.php" id="loginLink">Выход</a></li>
                 </ul>
 
@@ -88,9 +83,3 @@ require_once "funclogin.php";
 </table>
 </body>
 </html>
-<?php
-echo $log;
-echo "<hr>";
-echo $data;
-print_r($data);
-?>

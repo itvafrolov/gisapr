@@ -1,52 +1,35 @@
 <?php
 require_once "connectdb.php";
 require_once "funclogin.php";
-//require_once "zem1.php";
 if(!empty($_POST))
 {
     if($_POST['btn'] == 'Выполнить вход')
     {
     //cохраняем данные от пользователя
-    $log = my_login($_POST);
-    //echo $log;
-    if(!empty($log))
-    {
-        require_once "zem1.php";
-        //echo $log;
-        exit;
-    }
-    else
-    {
-    $log = "nologin";
-    //header("Location: {$_SERVER['PHP_SELF']}");    
-    }
-    //  exit;  
+        $log = my_login($_POST);
+    
+        if(!empty($log))
+        {
+            $page = "zem1.php";
+            zem1($log, $page);
+            exit;
+        }
+        else
+        {
+            $log = "nologin";    
+        }    
     }
 }
-
-// $datalogin = get_login();
-// if(!isset($datalogin)){
-//     echo $datalogin;
-// }
-// else 
-//     echo "ПИПЕЦ!";
 ?>
 
 <!DOCTYPE html>
-<!-- saved from url=(0037)https://localhost:44315/Account/Login -->
 <html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Выполнить вход в ГИСАПР</title>
     <link href="./css/bootstrap.css" rel="stylesheet">
-    <link href="./css/site.css" rel="stylesheet">
-    <!-- <script src="./Выполнить вход - приложение ASP.NET_files/modernizr-2.8.3.js.Без названия"></script> -->
-
-    <!-- <object class="chrome-extension://jffafkigfgmjafhpkoibhfefeaebmccg/" style="display: none; visibility: hidden;"></object></head> -->
-
+    <link href="./css/site.css" rel="stylesheet">    
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -66,10 +49,8 @@ if(!empty($_POST))
                     
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- <li><a href="https://localhost:44315/Account/Register" id="registerLink">Регистрация</a></li> -->
                     <li><a href="../index.php" id="loginLink">Выполнить вход</a></li>
                 </ul>
-
             </div>
         </div>
     </div>
@@ -107,9 +88,6 @@ if(!empty($_POST))
                                 <input type="submit" name="btn" value="Выполнить вход" class="btn btn-default" >
                             </div>
                         </div>
-                        <p>
-                            <!-- <a href="https://localhost:44315/Account/Register">Регистрация нового пользователя</a> -->
-                        </p>
                     </form>
                 </section>
             </div>
@@ -129,7 +107,6 @@ if(!empty($_POST))
             </div>
         </div>
 
-
         <hr>
         <footer>
             <p>© 2021 - Система учета ГИСАПР</p>
@@ -138,7 +115,7 @@ if(!empty($_POST))
     <br/><br/><br/>
     <?php if($log=="nologin"):  ?>
         <div class="form-group">
-        <h4><?php echo "Неверное имя или пароль, выполните вход заново."; ?></h4>
+        <h4> <span class="span-red"><?php echo "Неверное имя или пароль, выполните вход заново."; ?> </span> </h4>
         </div>
     <?php endif; ?>
     </div>

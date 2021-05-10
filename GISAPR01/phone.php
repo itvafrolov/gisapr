@@ -1,5 +1,5 @@
 <?php
-//require_once "connectdb.php";
+require_once "connectdb.php";
 $res = mysqli_query($db, "SELECT * FROM clients");
 $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
 $tt = "123456";

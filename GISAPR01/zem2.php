@@ -26,20 +26,18 @@ require_once "funclogin.php";
 </head>
 <body>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+<div class="navbar navbar-inverse navbar-fixed-top">
+       <div class="navbar-menu-3">
+                <button type="button" class="navbar-left">
+                <div class="icon-bar2"></div>
+                <div class="icon-bar2"></div>
+                <div class="icon-bar2"></div>
                 </button>                
-            </div>
+            </div> 
+            <div class="container">            
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                     
-                      <li> <a href="fffff">Полная информация</a></li>
-
+                    <li><a href="#">Информация</a></li>
                     <li><a href="#">Рабочие справочники</a></li>
                     <li><a href="./phone.php">Телефонный справочник</a></li>                    
                 </ul>
