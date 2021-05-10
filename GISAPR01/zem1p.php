@@ -55,8 +55,8 @@ echo $log;
       <th scope="col">Дата договора</th>
       <th scope="col">Тип объекта</th>
       <th scope="col">Название объекта</th>
-      <th scope="col">Адрес объекта</th>
-      <th scope="col">клиент</th>
+      <!-- <th scope="col">Адрес объекта</th> -->
+      <!-- <th scope="col">клиент</th> -->
       <!-- <th scope="col">Телефон 2</th> -->
       <!-- <th scope="col">email</th> -->
       <!-- <th scope="col">Примечание</th> -->
@@ -71,8 +71,8 @@ echo $log;
       <td><?= $item['startcontract'] ?></td>
       <td><?= $item['typeorder'] ?></td>
       <td><?= $item['ordername'] ?></td>
-      <td><?= $item['orderaddress'] ?></td>  
-      <td><?= $item['name'] ?></td>    
+      <!-- <td><?= $item['orderaddress'] ?></td>   -->
+      <!-- <td><?= $item['name'] ?></td>     -->
       <!-- <td><?= $item['phone'] ?></td> -->      
       <!-- <td><?= $item['email'] ?></td> -->
       <!-- <td><?= $item['note'] ?></td> -->

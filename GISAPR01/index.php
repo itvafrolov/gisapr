@@ -1,4 +1,5 @@
 <?php
+//session_start();
 require_once "connectdb.php";
 require_once "funclogin.php";
 if(!empty($_POST))
@@ -20,6 +21,18 @@ if(!empty($_POST))
         }    
     }
 }
+
+if(!empty($_GET['fullpage']))
+    {
+        $log=$_GET['fullpage'];
+        $page = "zem1p.php";
+        zem1($log, $page);
+        exit;
+        //   echo $_GET['fullpage'];
+      //zem1p();
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +41,8 @@ if(!empty($_POST))
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Выполнить вход в ГИСАПР</title>
-    <link href="./css/bootstrap.css" rel="stylesheet">
-    <link href="./css/site.css" rel="stylesheet">    
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/site.css" rel="stylesheet">    
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -115,7 +128,7 @@ if(!empty($_POST))
     <br/><br/><br/>
     <?php if($log=="nologin"):  ?>
         <div class="form-group">
-        <h4> <span class="span-red"><?php echo "Неверное имя или пароль, выполните вход заново."; ?> </span> </h4>
+        <h4> <span class="span-red"><? echo "Неверное имя или пароль, выполните вход заново."; ?> </span> </h4>
         </div>
     <?php endif; ?>
     </div>

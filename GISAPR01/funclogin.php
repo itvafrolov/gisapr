@@ -49,7 +49,4 @@ $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
 require_once $page;
 }
 
-
-
-
 ?>

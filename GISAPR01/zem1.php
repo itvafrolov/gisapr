@@ -1,13 +1,6 @@
 <?php 
 require_once "funclogin.php";
-
-    if (isset($_GET['fffff'])){
-      echo $log;
-    }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +31,7 @@ require_once "funclogin.php";
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                      
-                      <li> <a href="fffff">Полная информация</a></li>
+                      <li> <a href="index.php?fullpage=<? echo $log ?>" >Полная информация</a></li>
 
                     <li><a href="#">Рабочие справочники</a></li>
                     <li><a href="./phone.php">Телефонный справочник</a></li>                    
@@ -88,9 +81,3 @@ require_once "funclogin.php";
 </table>
 </body>
 </html>
-<?php
-echo $log;
-echo "<hr>";
-echo $data;
-print_r($data);
-?>
