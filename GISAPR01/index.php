@@ -32,6 +32,19 @@ if(!empty($_GET['fullpage']))
       //zem1p();
     }
 
+    if(!empty($_GET['order']))
+    {
+        //$ordersid=$_GET['order'];
+        $page = "zem1p.php";
+        zem1($log, $page);
+        echo $_GET['order'];
+        exit;
+          
+      //zem1p();
+    }
+
+
+
 
 ?>
 
