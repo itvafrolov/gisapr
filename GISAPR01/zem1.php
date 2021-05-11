@@ -55,6 +55,7 @@ require_once "funclogin.php";
       <th scope="col">Название объекта</th>
       <th scope="col">Адрес объекта</th>
       <th scope="col">клиент</th>
+      <th scope="col">информация</th>
       <!-- <th scope="col">Телефон 2</th> -->
       <!-- <th scope="col">email</th> -->
       <!-- <th scope="col">Примечание</th> -->
@@ -64,13 +65,14 @@ require_once "funclogin.php";
   <tbody>
   <?php foreach($data as $item):?>
     <tr>      
-      <td><?= $item['id'] ?></td>
+      <td><?= $item['ordersid'] ?></td>
       <td><?= $item['numcontract'] ?></td>
       <td><?= $item['startcontract'] ?></td>
       <td><?= $item['typeorder'] ?></td>
       <td><?= $item['ordername'] ?></td>
       <td><?= $item['orderaddress'] ?></td>  
       <td><?= $item['name'] ?></td>    
+      <th> <button><a href="index.php?order=<? echo $item['ordersid'] ?>"> событие </button> </th>
       <!-- <td><?= $item['phone'] ?></td> -->      
       <!-- <td><?= $item['email'] ?></td> -->
       <!-- <td><?= $item['note'] ?></td> -->
