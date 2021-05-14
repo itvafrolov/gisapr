@@ -39,14 +39,46 @@ function get_login()
 }
 
 
-function zem1($log, $page){
+function zem3($user, $page){
 global $db;    
 $res = mysqli_query($db, "SELECT * FROM `orders` 
                           INNER JOIN `clients` ON orders.clientid=clients.id 
                           INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid 
-                          WHERE ordersemlp.employid=$log");
+                          WHERE ordersemlp.employid=$user");
 $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
 require_once $page;
 }
+
+function zem3p ($ordersid, $page){
+    global $db;    
+    $res = mysqli_query($db, "SELECT * FROM `orders` 
+                              INNER JOIN `clients` ON orders.clientid=clients.id
+                              INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid
+                              LEFT JOIN `historyorders` ON orders.id = historyorders.ordersid
+                              WHERE orders.id=$ordersid");
+    $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
+    require_once $page;
+    }
+    
+
+
+function save_zem_event($post)
+{
+    global $db;
+    extract($post); // создаем переменные
+    $sql_ins = " INSERT INTO historyorders (`ordersid`, `event`) VALUES ('$orderid', '$zemevent')";    
+    mysqli_query($db, $sql_ins);
+}
+
+function get_messages()
+{
+    global $db;
+    $sql_sel = "SELECT id, name, text, date FROM gb";
+    $res = mysqli_query($db, $sql_sel);
+    $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
+    return $data;
+}
+
+
 
 ?>

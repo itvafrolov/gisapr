@@ -8,11 +8,27 @@ if(!empty($_POST))
     {
     //cохраняем данные от пользователя
         $log = my_login($_POST);
+        $a_log = access_login($_POST);
     
-        if(!empty($log))
+        if(!empty($log) && $a_log==3)
         {
+
+            $page = "zem3.php";
+            zem3($log, $page);            
+            exit;
+        }
+        if(!empty($log) && $a_log==2)
+        {
+
+            $page = "zem2.php";
+            zem3($log, $page);            
+            exit;
+        }
+        if(!empty($log) && $a_log==1)
+        {
+
             $page = "zem1.php";
-            zem1($log, $page);
+            zem3($log, $page);            
             exit;
         }
         else
@@ -20,13 +36,29 @@ if(!empty($_POST))
             $log = "nologin";    
         }    
     }
+
+
+    if($_POST['add-btn-z3p'] == 'Добавить')
+    {
+        if(!empty($_POST['zemevent']) && !empty($_POST['orderid']))
+        save_zem_event($_POST);
+        //print_r( $_POST);
+        // extract($_POST);
+        // echo $orderid;
+        // echo "<br>";
+        // echo $zemevent;
+        // echo "<br>";
+
+    }
+
+
 }
 
 if(!empty($_GET['fullpage']))
     {
-        $log=$_GET['fullpage'];
-        $page = "zem1p.php";
-        zem1($log, $page);
+        $user=$_GET['fullpage'];
+        $page = "zem3p.php";
+        zem3($user, $page);
         exit;
         //   echo $_GET['fullpage'];
       //zem1p();
@@ -34,10 +66,10 @@ if(!empty($_GET['fullpage']))
 
     if(!empty($_GET['order']))
     {
-        //$ordersid=$_GET['order'];
-        $page = "zem1p.php";
-        zem1($log, $page);
-        echo $_GET['order'];
+        $ordersid=$_GET['order'];
+        $page = "zem3p.php";
+        zem3p($ordersid, $page);
+        //echo $_GET['order'];
         exit;
           
       //zem1p();

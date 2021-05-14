@@ -26,6 +26,8 @@ textarea {
 .navbar-menu-3 {
     padding-left: 15px;
     padding-right: 15px;
+    border-color: #ddd;
+    background-color: #111;
 }
 
 .icon-bar2{
@@ -38,4 +40,75 @@ textarea {
 
 .span-red{
    color: red;
+}
+
+
+.navbar-menu-3 .icon-bar2 {
+    display: block;
+    width: 32px;
+    height: 3px;
+    border-radius: 13px;
+  }
+
+
+  /*------------------------*/
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 1;
+    right: 25px;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.input-event-13{
+    width: 100%;
+}
+
+.event-form {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 480px;
+  }
+
+  .col-md-13 {
+  position: fixed;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 300px;
 }

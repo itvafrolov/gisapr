@@ -1,13 +1,6 @@
 <?php 
 require_once "funclogin.php";
-
-    if (isset($_GET['fffff'])){
-      echo $log;
-    }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,18 +19,20 @@ require_once "funclogin.php";
 </head>
 <body>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-       <div class="navbar-menu-3">
-                <button type="button" class="navbar-left">
-                <div class="icon-bar2"></div>
-                <div class="icon-bar2"></div>
-                <div class="icon-bar2"></div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>                
-            </div> 
-            <div class="container">            
+            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Информация</a></li>
+                     
+                      <li> <a href="index.php?fullpage=<? echo $log ?>" >Полная информация</a></li>
+
                     <li><a href="#">Рабочие справочники</a></li>
                     <li><a href="./phone.php">Телефонный справочник</a></li>                    
                 </ul>
@@ -60,7 +55,8 @@ require_once "funclogin.php";
       <th scope="col">Название объекта</th>
       <th scope="col">Адрес объекта</th>
       <th scope="col">клиент</th>
-      <th scope="col"> Печать </th>
+      <th scope="col">информация</th>
+      <!-- <th scope="col">Телефон 2</th> -->
       <!-- <th scope="col">email</th> -->
       <!-- <th scope="col">Примечание</th> -->
       <!-- <th scope="col"> <button><a href="index2.html" /> переход</button> </th> -->
@@ -69,14 +65,15 @@ require_once "funclogin.php";
   <tbody>
   <?php foreach($data as $item):?>
     <tr>      
-      <td><?= $item['id'] ?></td>
+      <td><?= $item['ordersid'] ?></td>
       <td><?= $item['numcontract'] ?></td>
       <td><?= $item['startcontract'] ?></td>
       <td><?= $item['typeorder'] ?></td>
       <td><?= $item['ordername'] ?></td>
       <td><?= $item['orderaddress'] ?></td>  
       <td><?= $item['name'] ?></td>    
-      <td><?= $item['jobload'] ?></td>      
+      <th> <button><a href="index.php?order=<? echo $item['ordersid'] ?>"> событие </button> </th>
+      <!-- <td><?= $item['phone'] ?></td> -->      
       <!-- <td><?= $item['email'] ?></td> -->
       <!-- <td><?= $item['note'] ?></td> -->
       <!-- <td><?= $item['note2'] ?></td> -->
@@ -86,9 +83,3 @@ require_once "funclogin.php";
 </table>
 </body>
 </html>
-<?php
-echo $log;
-echo "<hr>";
-echo $data;
-print_r($data);
-?>

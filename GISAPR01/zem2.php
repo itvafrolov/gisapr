@@ -26,13 +26,24 @@ require_once "funclogin.php";
 </head>
 <body>
 <body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> X </a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>  
+</div>
+
 <div class="navbar navbar-inverse navbar-fixed-top">
-       <div class="navbar-menu-3">
+  <div class="navbar-menu-3" id="mySidenav" onclick="openNav()">
+<!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ </span> -->
+       
                 <button type="button" class="navbar-left">
                 <div class="icon-bar2"></div>
                 <div class="icon-bar2"></div>
                 <div class="icon-bar2"></div>
-                </button>                
+                </button>
             </div> 
             <div class="container">            
             <div class="navbar-collapse collapse">
@@ -60,7 +71,7 @@ require_once "funclogin.php";
       <th scope="col">Название объекта</th>
       <th scope="col">Адрес объекта</th>
       <th scope="col">клиент</th>
-      <!-- <th scope="col">Телефон 2</th> -->
+      <th scope="col"> Печать </th>
       <!-- <th scope="col">email</th> -->
       <!-- <th scope="col">Примечание</th> -->
       <!-- <th scope="col"> <button><a href="index2.html" /> переход</button> </th> -->
@@ -76,7 +87,7 @@ require_once "funclogin.php";
       <td><?= $item['ordername'] ?></td>
       <td><?= $item['orderaddress'] ?></td>  
       <td><?= $item['name'] ?></td>    
-      <!-- <td><?= $item['phone'] ?></td> -->      
+      <td><?= $item['jobload'] ?></td>      
       <!-- <td><?= $item['email'] ?></td> -->
       <!-- <td><?= $item['note'] ?></td> -->
       <!-- <td><?= $item['note2'] ?></td> -->
@@ -84,6 +95,18 @@ require_once "funclogin.php";
   <?php endforeach;?>
   </tbody>
 </table>
+
+<script>  
+  function openNav() {
+   
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+</script>
+
 </body>
 </html>
 <?php
