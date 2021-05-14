@@ -1,10 +1,5 @@
 <?php 
 require_once "funclogin.php";
-
-    if (isset($_GET['fffff'])){
-      echo $log;
-    }
-
 ?>
 
 
@@ -72,6 +67,8 @@ require_once "funclogin.php";
       <th scope="col">Адрес объекта</th>
       <th scope="col">клиент</th>
       <th scope="col"> Печать </th>
+      <th scope="col"> Исполнитель </th>
+      <th scope="col"> Изменить </th>
       <!-- <th scope="col">email</th> -->
       <!-- <th scope="col">Примечание</th> -->
       <!-- <th scope="col"> <button><a href="index2.html" /> переход</button> </th> -->
@@ -80,14 +77,16 @@ require_once "funclogin.php";
   <tbody>
   <?php foreach($data as $item):?>
     <tr>      
-      <td><?= $item['id'] ?></td>
+      <td><?= $item['ordersid'] ?></td>
       <td><?= $item['numcontract'] ?></td>
       <td><?= $item['startcontract'] ?></td>
       <td><?= $item['typeorder'] ?></td>
       <td><?= $item['ordername'] ?></td>
       <td><?= $item['orderaddress'] ?></td>  
       <td><?= $item['name'] ?></td>    
-      <td><?= $item['jobload'] ?></td>      
+      <td><?= $item['jobload'] ?></td> 
+      <td><?= $item['fullname'] ?></td>
+      <th> <button><a href="index.php?order=<? echo $item['ordersid'] ?>"> изменить </button> </th> 
       <!-- <td><?= $item['email'] ?></td> -->
       <!-- <td><?= $item['note'] ?></td> -->
       <!-- <td><?= $item['note2'] ?></td> -->

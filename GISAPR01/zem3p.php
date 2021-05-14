@@ -32,7 +32,7 @@ require_once "funclogin.php";
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li> <a href="index.php?fullpage=<? echo $user ?>"> К списку объектов</a></li>                    
+                    <li> <a href="index.php?fullpage=<?= $data[0]['employid'] ?>"> К списку объектов</a></li>                    
                     <li><a href="#">Рабочие справочники</a></li>
                     <li><a href="./phone.php">Телефонный справочник</a></li>                    
                 </ul>

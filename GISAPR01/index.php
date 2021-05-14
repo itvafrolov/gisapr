@@ -19,9 +19,7 @@ if(!empty($_POST))
         }
         if(!empty($log) && $a_log==2)
         {
-
-            $page = "zem2.php";
-            zem3($log, $page);            
+            zem2();
             exit;
         }
         if(!empty($log) && $a_log==1)
@@ -57,7 +55,7 @@ if(!empty($_POST))
 if(!empty($_GET['fullpage']))
     {
         $user=$_GET['fullpage'];
-        $page = "zem3p.php";
+        $page = "zem3.php";
         zem3($user, $page);
         exit;
         //   echo $_GET['fullpage'];

@@ -31,7 +31,7 @@ require_once "funclogin.php";
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                      
-                      <li> <a href="index.php?fullpage=<? echo $log ?>" >Полная информация</a></li>
+                      <li> <a href="index.php?fullpage=<? echo $user ?>" >Полная информация</a></li>
 
                     <li><a href="#">Рабочие справочники</a></li>
                     <li><a href="./phone.php">Телефонный справочник</a></li>                    

@@ -59,6 +59,17 @@ function zem3p ($ordersid, $page){
     $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
     require_once $page;
     }
+
+    function zem2 (){
+        global $db;    
+        $res = mysqli_query($db, "SELECT * FROM `orders` 
+                                  INNER JOIN `clients` ON orders.clientid=clients.id
+                                  INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid
+                                  INNER JOIN `employees` ON  ordersemlp.employid = employees.id"
+                                  );
+        $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
+        require_once "zem2.php";
+        }
     
 
 
