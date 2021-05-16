@@ -40,14 +40,25 @@ if(!empty($_POST))
     {
         if(!empty($_POST['zemevent']) && !empty($_POST['orderid']))
         save_zem_event($_POST);
-        //print_r( $_POST);
-        // extract($_POST);
-        // echo $orderid;
-        // echo "<br>";
-        // echo $zemevent;
-        // echo "<br>";
-
     }
+
+    if($_POST['change-btn-z2p'] == 'Записать')
+    {
+        if(!empty($_POST['zemobj']) && !empty($_POST['orderid']))
+        change_z2p_obj($_POST);
+    }
+
+    if($_POST['change-btn-z2p'] == 'Записать')
+    {
+        if(!empty($_POST['zemaddr']) && !empty($_POST['orderid']))
+        change_z2p_addr($_POST);
+    }
+    if($_POST['change-btn-z2p'] == 'Записать')
+    {
+        if(!empty($_POST['zemTD']) && !empty($_POST['orderid']))
+        change_z2p_TD($_POST);
+    }
+
 
 
 }
@@ -58,18 +69,35 @@ if(!empty($_GET['fullpage']))
         $page = "zem3.php";
         zem3($user, $page);
         exit;
-        //   echo $_GET['fullpage'];
-      //zem1p();
+        
     }
 
-    if(!empty($_GET['order']))
+if(!empty($_GET['fullobjpage']))
+    {       
+        zem2();
+        exit;
+        
+    }
+
+
+    if(!empty($_GET['order']))    
     {
+        if ($_GET['access']==2)
+        {
+        $ordersid=$_GET['order'];
+        $page = "zem2p.php";
+        zem3p($ordersid, $page);
+        // echo $_GET['order'];
+        exit;
+        }
+        else 
+        {
         $ordersid=$_GET['order'];
         $page = "zem3p.php";
         zem3p($ordersid, $page);
-        //echo $_GET['order'];
+        // echo $_GET['order'];
         exit;
-          
+        }
       //zem1p();
     }
 
@@ -79,13 +107,13 @@ if(!empty($_GET['fullpage']))
 ?>
 
 <!DOCTYPE html>
-<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Выполнить вход в ГИСАПР</title>
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/site.css" rel="stylesheet">    
+    <title>Выполнить вход в ГИСАПР</title>    
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">    
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">

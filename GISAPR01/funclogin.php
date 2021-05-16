@@ -60,7 +60,7 @@ function zem3p ($ordersid, $page){
     require_once $page;
     }
 
-    function zem2 (){
+    function zem2(){
         global $db;    
         $res = mysqli_query($db, "SELECT * FROM `orders` 
                                   INNER JOIN `clients` ON orders.clientid=clients.id
@@ -90,6 +90,29 @@ function get_messages()
     return $data;
 }
 
+function change_z2p_obj($post)
+{
+    global $db;
+    extract($post); // создаем переменные
+    $sql_ins = "UPDATE orders SET ordername='$zemobj' WHERE id = $orderid";
+    mysqli_query($db, $sql_ins);
+    $ddd= date("Y-m-d");
+    echo $ddd;
+}
 
+function change_z2p_addr($post)
+{
+    global $db;
+    extract($post); // создаем переменные    
+    $sql_ins = "UPDATE orders SET orderaddress='$zemaddr' WHERE id = $orderid";
+    mysqli_query($db, $sql_ins);
+}
+function change_z2p_TD($post)
+{
+    global $db;
+    extract($post); // создаем переменные    
+    $sql_ins = "UPDATE orders SET typeorder='$zemTD' WHERE id = $orderid";
+    mysqli_query($db, $sql_ins);
+}
 
 ?>

@@ -24,8 +24,8 @@ require_once "funclogin.php";
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> X </a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
+  <a href="#">Новый клиент</a>
+  <a href="#">Новый объект</a>
   <a href="#">Clients</a>
   <a href="#">Contact</a>  
 </div>
@@ -86,7 +86,7 @@ require_once "funclogin.php";
       <td><?= $item['name'] ?></td>    
       <td><?= $item['jobload'] ?></td> 
       <td><?= $item['fullname'] ?></td>
-      <th> <button><a href="index.php?order=<? echo $item['ordersid'] ?>"> изменить </button> </th> 
+      <th> <button><a href="index.php?access=2&order=<? echo $item['ordersid'] ?>"> изменить </button> </th> 
       <!-- <td><?= $item['email'] ?></td> -->
       <!-- <td><?= $item['note'] ?></td> -->
       <!-- <td><?= $item['note2'] ?></td> -->
@@ -108,9 +108,9 @@ require_once "funclogin.php";
 
 </body>
 </html>
-<?php
+<!-- <?php
 echo $log;
 echo "<hr>";
 echo $data;
 print_r($data);
-?>
+?> -->

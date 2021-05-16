@@ -32,7 +32,7 @@ require_once "funclogin.php";
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li> <a href="index.php?fullpage=<?= $data[0]['employid'] ?>"> К списку объектов</a></li>                    
+                    <li> <a href="index.php?fullobjpage=1"> К списку объектов</a></li>                    
                     <li><a href="#">Рабочие справочники</a></li>
                     <li><a href="./phone.php">Телефонный справочник</a></li>                    
                 </ul>
@@ -51,19 +51,30 @@ require_once "funclogin.php";
     <p class="col-md-10 " > <?= $data[0]['name'] ?> </p>
     <br/>
     <hr/>
-    <label class="col-md-2 control-label" > Объект: </label>
-    <p class="col-md-10 " > <?= $data[0]['ordername'] ?> </p>
-    <br/>
+
+    <form  method="post" novalidate="novalidate">      
+      <label class="col-md-2 control-label"> Объект: </label>
+      <input class="event-form" id="zemobj" name="zemobj" value="<?= $data[0]['ordername'] ?>"> </input>
+      <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
+      <input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" >
+    </form>
+    <br>
+    <form  method="post" novalidate="novalidate">      
+      <label class="col-md-2 control-label"> Место расположения участка: </label>
+      <input class="event-form" id="zemaddr" name="zemaddr" value="<?= $data[0]['orderaddress'] ?>"> </input>
+      <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
+      <input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" >
+    </form>
+    <br>
+    <form  method="post" novalidate="novalidate">      
+      <label class="col-md-2 control-label"> Объем работы: </label>
+      <input class="event-form" id="zemTD" name="zemTD" value="<?= $data[0]['typeorder'] ?>"> </input>
+      <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
+      <input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" >
+    </form>  
+    
     <hr/>
-    <label class="col-md-2 control-label" > Место расположения участка: </label>
-    <p class="col-md-10 " > <?= $data[0]['orderaddress'] ?> </p>
-    <br/>
-    <hr/>
-    <label class="col-md-2 control-label" > Тип документации: </label>
-    <p class="col-md-10 " > <?= $data[0]['typeorder'] ?> </p>
-    <br/>
-    <hr/>
-    <label class="col-md-2 control-label" > Исполнение: </label>
+    <label class="col-md-2 control-label" > Ход выполнения: </label>
 
     <?php foreach($data as $item):?>
     <p class="col-md-13" > <?= $item['event'] ?> : <?= $item['dataevent'] ?> </p> <br>
