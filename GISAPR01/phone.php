@@ -59,11 +59,9 @@ $tt = "123456";
       <th scope="col">Идентиф. код</th>
       <!-- <th scope="col">Паспорт / Устав</th> -->
       <th scope="col">Контактное лицо</th>
-      <th scope="col">Телефон 1</th>
-      <th scope="col">Телефон 2</th>
+      <th scope="col">Телефон 1</th>      
       <th scope="col">email</th>
-      <th scope="col">Примечание</th>
-      <th scope="col"> <button><a href="index2.html" /> переход</button> </th>
+      <th scope="col">Примечание</th>      
     </tr>
   </thead>
   <tbody>
@@ -75,11 +73,9 @@ $tt = "123456";
       <td><?= $item['code'] ?></td>
       <!-- <td><?= $item['passport'] ?></td> -->
       <td><?= $item['contact'] ?></td>      
-      <td><?= $item['phone'] ?></td>
-      <td><?= $item['phone2'] ?></td>
+      <td><?= $item['phone'] ?></td>      
       <td><?= $item['email'] ?></td>
-      <td><?= $item['note'] ?></td>
-      <td><?= $item['note2'] ?></td>
+      <td><?= $item['note'] ?></td>      
     </tr>
   <?php endforeach;?>
   </tbody>

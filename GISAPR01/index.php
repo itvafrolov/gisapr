@@ -107,13 +107,12 @@ if(!empty($_GET['fullobjpage']))
 ?>
 
 <!DOCTYPE html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Выполнить вход в ГИСАПР</title>    
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/site.css" rel="stylesheet">    
+    <title>Выполнить вход в ГИСАПР</title>
+    <link href="/css2/bootstrap.css" rel="stylesheet">
+    <link href="/css2/site.css" rel="stylesheet">    
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">

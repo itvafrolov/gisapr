@@ -14,10 +14,10 @@ require_once "funclogin.php";
     .table thead th{vertical-align:bottom;border-bottom:1px solid #dee2e6}
     .table th{text-align:left;padding:1rem;border-top:1px solid #dee2e6 }
     </style>
-    <link href="./css/bootstrap.css" rel="stylesheet">
-    <link href="./css/site.css" rel="stylesheet">
+    <link href="css2/bootstrap.css" rel="stylesheet">
+    <link href="css2/site.css" rel="stylesheet">
     
-    <title>Ex 6</title>
+    <title>Нач. отдела землеустройства</title>
 </head>
 <body>
 <body>
@@ -31,23 +31,23 @@ require_once "funclogin.php";
 </div>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-menu-3" id="mySidenav" onclick="openNav()">
-<!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ </span> -->
-       
-                <button type="button" class="navbar-left">
-                <div class="icon-bar2"></div>
-                <div class="icon-bar2"></div>
-                <div class="icon-bar2"></div>
-                </button>
-            </div> 
-            <div class="container">            
-            <div class="navbar-collapse collapse">
+   <div>
+                <button class="button-left" id="mySidenav" onclick="openNav()"> 
+                  <div>
+                    <div class="icon-bar2"> </div>
+                    <div class="icon-bar2"> </div>
+                    <div class="icon-bar2"> </div>
+                  </div>
+                </button>  
+            </div>
+            <div class="container">
+            <div class="navbar-collapse collapse">          
                 <ul class="nav navbar-nav">
                     <li><a href="#">Информация</a></li>
                     <li><a href="#">Рабочие справочники</a></li>
-                    <li><a href="./phone.php">Телефонный справочник</a></li>                    
+                    <li><a href="./phone.php" target="_blank">Телефонный справочник</a></li>                    
                 </ul>
-                <ul class="nav navbar-nav navbar-right">                   
+                <ul class="nav navbar-nav navbar-right">                  
                     <li><a href="../index.php" id="loginLink">Выход</a></li>
                 </ul>
 
@@ -98,7 +98,7 @@ require_once "funclogin.php";
 <script>  
   function openNav() {
    
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "350px";
   }
 
   function closeNav() {

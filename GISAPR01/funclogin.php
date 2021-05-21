@@ -77,7 +77,8 @@ function save_zem_event($post)
 {
     global $db;
     extract($post); // создаем переменные
-    $sql_ins = " INSERT INTO historyorders (`ordersid`, `event`) VALUES ('$orderid', '$zemevent')";    
+    $ddd= date("Y-m-d");
+    $sql_ins = " INSERT INTO historyorders (`ordersid`, `event`,`dataevent`) VALUES ('$orderid', '$zemevent','$ddd')";    
     mysqli_query($db, $sql_ins);
 }
 
@@ -96,8 +97,6 @@ function change_z2p_obj($post)
     extract($post); // создаем переменные
     $sql_ins = "UPDATE orders SET ordername='$zemobj' WHERE id = $orderid";
     mysqli_query($db, $sql_ins);
-    $ddd= date("Y-m-d");
-    echo $ddd;
 }
 
 function change_z2p_addr($post)
