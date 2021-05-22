@@ -73,7 +73,7 @@ require_once "funclogin.php";
     <div >
     <form  method="post" novalidate="novalidate">      
       <label class="col-md-2 control-label"> Событие: </label>
-      <input class="event-form" id="zemevent" name="zemevent"> </input>
+      <input class="col-md-2 event-form" id="zemevent" name="zemevent"> </input>
       <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
       <input type="submit" name="add-btn-z3p" value="Добавить" class="btn btn-default" >
 </form>

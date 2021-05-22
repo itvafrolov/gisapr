@@ -51,24 +51,27 @@ require_once "funclogin.php";
     <p class="col-md-10 " > <?= $data[0]['name'] ?> </p>
     <br/>
     <hr/>
-
+<div >
     <form  method="post" novalidate="novalidate">      
-      <label class="col-md-2 control-label"> Объект: </label>
-      <input class="event-form" id="zemobj" name="zemobj" value="<?= $data[0]['ordername'] ?>"> </input>
-      <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
-      <input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" >
+    <tr>
+    <td><label class="col-md-2 "> Объект: </label></td>
+    <td><input class="col-md-3 event-form" id="zemobj" name="zemobj" value="<?= $data[0]['ordername'] ?>"> </input></td>
+    <td><input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input></td>
+    <td><input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" ><td>
+      </tr>
     </form>
+</div>
     <br>
     <form  method="post" novalidate="novalidate">      
       <label class="col-md-2 control-label"> Место расположения участка: </label>
-      <input class="event-form" id="zemaddr" name="zemaddr" value="<?= $data[0]['orderaddress'] ?>"> </input>
+      <input class="col-md-2 event-form" id="zemaddr" name="zemaddr" value="<?= $data[0]['orderaddress'] ?>"> </input>
       <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
       <input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" >
     </form>
     <br>
     <form  method="post" novalidate="novalidate">      
       <label class="col-md-2 control-label"> Объем работы: </label>
-      <input class="event-form" id="zemTD" name="zemTD" value="<?= $data[0]['typeorder'] ?>"> </input>
+      <input class="col-md-2 event-form" id="zemTD" name="zemTD" value="<?= $data[0]['typeorder'] ?>"> </input>
       <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
       <input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" >
     </form>  
@@ -84,7 +87,7 @@ require_once "funclogin.php";
     <div >
     <form  method="post" novalidate="novalidate">      
       <label class="col-md-2 control-label"> Событие: </label>
-      <input class="event-form" id="zemevent" name="zemevent"> </input>
+      <input class="col-md-2 event-form" id="zemevent" name="zemevent"> </input>
       <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
       <input type="submit" name="add-btn-z3p" value="Добавить" class="btn btn-default" >
 </form>
