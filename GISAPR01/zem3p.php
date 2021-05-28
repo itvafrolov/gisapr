@@ -34,7 +34,7 @@ require_once "funclogin.php";
                 <ul class="nav navbar-nav">
                     <li> <a href="index.php?fullpage=<?= $data[0]['employid'] ?>"> К списку объектов</a></li>                    
                     <li><a href="#">Рабочие справочники</a></li>
-                    <li><a href="./phone.php">Телефонный справочник</a></li>                    
+                    <li><a href="./phone.php" target="_blank">Телефонный справочник</a></li>                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li><a href="https://localhost:44315/Account/Register" id="registerLink">Регистрация</a></li> -->

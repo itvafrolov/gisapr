@@ -128,7 +128,7 @@ if(!empty($_GET['fullobjpage']))
                 <ul class="nav navbar-nav">
                     <li><a href="#">Информация</a></li>
                     <li><a href="#">Рабочие справочники</a></li>
-                    <li><a href="./phone.php">Телефонный справочник</a></li>
+                    <li><a href="./phone.php" target="_blank">Телефонный справочник</a></li>
                     
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
