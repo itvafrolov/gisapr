@@ -65,7 +65,8 @@ function zem3p ($ordersid, $page){
         $res = mysqli_query($db, "SELECT * FROM `orders` 
                                   INNER JOIN `clients` ON orders.clientid=clients.id
                                   INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid
-                                  INNER JOIN `employees` ON  ordersemlp.employid = employees.id");
+                                  INNER JOIN `employees` ON  ordersemlp.employid = employees.id"
+                                  );
         $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
         require_once "zem2.php";
         }
@@ -76,8 +77,7 @@ function save_zem_event($post)
 {
     global $db;
     extract($post); // создаем переменные
-    $ddd= date("Y-m-d");
-    $sql_ins = "INSERT INTO historyorders (`ordersid`, `event`,`dataevent`) VALUES ('$orderid', '$zemevent','$ddd')";    
+    $sql_ins = " INSERT INTO historyorders (`ordersid`, `event`) VALUES ('$orderid', '$zemevent')";    
     mysqli_query($db, $sql_ins);
 }
 
@@ -96,6 +96,8 @@ function change_z2p_obj($post)
     extract($post); // создаем переменные
     $sql_ins = "UPDATE orders SET ordername='$zemobj' WHERE id = $orderid";
     mysqli_query($db, $sql_ins);
+    $ddd= date("Y-m-d");
+    echo $ddd;
 }
 
 function change_z2p_addr($post)
@@ -105,7 +107,6 @@ function change_z2p_addr($post)
     $sql_ins = "UPDATE orders SET orderaddress='$zemaddr' WHERE id = $orderid";
     mysqli_query($db, $sql_ins);
 }
-
 function change_z2p_TD($post)
 {
     global $db;
