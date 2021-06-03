@@ -58,8 +58,33 @@ if(!empty($_POST))
         if(!empty($_POST['zemTD']) && !empty($_POST['orderid']))
         change_z2p_TD($_POST);
     }
+    if($_POST['btn-search2'] == 'TR')
+    {
+        if(!empty($_POST['search2'])){      
+        search_z2p_TD($_POST);
+        }
+        else {
+            zem2();        
+        }
+        exit;
+    }
 
-
+    if($_POST['btn_z2_cl'] == '>>>  Записать  <<<')
+    {       
+        if(!empty($_POST['cl_name']) && !empty($_POST['cl_k_phone'])){
+            add_clients($_POST);
+            require_once "zem2client.php";
+            echo '<h4> <span class="span-green2"> Данные успешно записаны!</span> </h4>';
+            exit;
+           //error101();
+        }
+        else {
+            require_once "zem2client.php";
+            echo '<h4> <span class="span-red2"> Данные не записаны!</span> </h4>';
+            //zem2();
+        }
+        exit;
+    }
 
 }
 
@@ -75,6 +100,13 @@ if(!empty($_GET['fullpage']))
 if(!empty($_GET['fullobjpage']))
     {       
         zem2();
+        exit;
+        
+    }
+if($_GET['clients']==1)
+    {
+        // echo 'XYI';
+        z2client();
         exit;
         
     }
@@ -113,7 +145,7 @@ if(!empty($_GET['fullobjpage']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Выполнить вход в ГИСАПР</title>    
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/site.css" rel="stylesheet">    
+    <link href="css/site.css" rel="stylesheet">        
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">

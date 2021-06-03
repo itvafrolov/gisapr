@@ -30,8 +30,17 @@ textarea {
     background-color: #111;
 }
 
-.span-red{
+.span-red{  
    color: red;
+}
+
+.span-red2{
+  margin-left: 19%;
+   color: red;
+}
+.span-green2{
+  margin-left: 19%;
+   color: green;
 }
 
 
@@ -137,4 +146,31 @@ textarea {
     background-color: #888;
   }
   
+/*------ строка поиска -------*/
+.search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 7px;    
+    margin-bottom: 1px;
+    background: #ddd;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+  }
+   .search-container input{
+    margin-top: 10px;
+    margin-right: 2px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  } 
 
+
+  .search-container button:hover {
+    background: #ccc;
+  }
+
+  .fa-search:before {
+    content: "\f002";
+    }

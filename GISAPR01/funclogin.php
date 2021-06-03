@@ -65,8 +65,7 @@ function zem3p ($ordersid, $page){
         $res = mysqli_query($db, "SELECT * FROM `orders` 
                                   INNER JOIN `clients` ON orders.clientid=clients.id
                                   INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid
-                                  INNER JOIN `employees` ON  ordersemlp.employid = employees.id"
-                                  );
+                                  INNER JOIN `employees` ON  ordersemlp.employid = employees.id");
         $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
         require_once "zem2.php";
         }
@@ -77,7 +76,8 @@ function save_zem_event($post)
 {
     global $db;
     extract($post); // создаем переменные
-    $sql_ins = " INSERT INTO historyorders (`ordersid`, `event`) VALUES ('$orderid', '$zemevent')";    
+    $ddd= date("Y-m-d");
+    $sql_ins = "INSERT INTO historyorders (`ordersid`, `event`,`dataevent`) VALUES ('$orderid', '$zemevent','$ddd')";    
     mysqli_query($db, $sql_ins);
 }
 
@@ -96,8 +96,6 @@ function change_z2p_obj($post)
     extract($post); // создаем переменные
     $sql_ins = "UPDATE orders SET ordername='$zemobj' WHERE id = $orderid";
     mysqli_query($db, $sql_ins);
-    $ddd= date("Y-m-d");
-    echo $ddd;
 }
 
 function change_z2p_addr($post)
@@ -107,12 +105,53 @@ function change_z2p_addr($post)
     $sql_ins = "UPDATE orders SET orderaddress='$zemaddr' WHERE id = $orderid";
     mysqli_query($db, $sql_ins);
 }
+
 function change_z2p_TD($post)
 {
     global $db;
     extract($post); // создаем переменные    
     $sql_ins = "UPDATE orders SET typeorder='$zemTD' WHERE id = $orderid";
     mysqli_query($db, $sql_ins);
+}
+
+function search_z2p_TD($post){
+global $db;    
+extract($post);
+$res = mysqli_query($db, "SELECT * FROM `orders`
+                          INNER JOIN `clients` ON orders.clientid=clients.id
+                          INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid 
+                          INNER JOIN `employees` ON  ordersemlp.employid = employees.id
+                            WHERE jobload LIKE '%$search2%' OR                    
+                            typeorder LIKE '%$search2%' OR
+                            ordername LIKE '%$search2%' OR
+                            orderaddress LIKE '%$search2%' OR
+                            `name` LIKE '%$search2%' OR    
+                            fullname LIKE '%$search2%'                           
+                        ");
+$data = mysqli_fetch_all($res, MYSQLI_ASSOC);
+require_once "zem2.php";
+}
+
+/* БЛОК РАБОТЫ С ТАБЛИЦЕЙ  КЛИЕНТЫ  */
+
+function z2client ()
+{
+    require_once "zem2client.php";
+}  
+
+function add_clients($post)
+{
+    global $db;
+    extract($post); // создаем переменные    
+    $sql_ins = "INSERT INTO `clients` (`name`, `address`,`code`, `contact`, `phone`, `email`, `note`,`note2`) 
+                VALUES ('$cl_name', '$cl_address','$cl_idnum','$cl_kontact','$cl_k_phone','$cl_k_email','$cl_pr1','$cl_pr2')";
+    mysqli_query($db, $sql_ins);  
+}
+/* функции предупреждения о не записанных данных  в базу или успешно записанных*/
+function error101 (){
+    echo '<div class="form-group">';
+    echo '<h4> <span class="span-red2"> Данные не записаны!</span> </h4>';
+    echo '</div>';
 }
 
 ?>

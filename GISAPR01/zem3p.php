@@ -34,7 +34,7 @@ require_once "funclogin.php";
                 <ul class="nav navbar-nav">
                     <li> <a href="index.php?fullpage=<?= $data[0]['employid'] ?>"> К списку объектов</a></li>                    
                     <li><a href="#">Рабочие справочники</a></li>
-                    <li><a href="./phone.php">Телефонный справочник</a></li>                    
+                    <li><a href="./phone.php" target="_blank">Телефонный справочник</a></li>                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li><a href="https://localhost:44315/Account/Register" id="registerLink">Регистрация</a></li> -->
@@ -73,7 +73,7 @@ require_once "funclogin.php";
     <div >
     <form  method="post" novalidate="novalidate">      
       <label class="col-md-2 control-label"> Событие: </label>
-      <input class="event-form" id="zemevent" name="zemevent"> </input>
+      <input class="col-md-2 event-form" id="zemevent" name="zemevent"> </input>
       <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
       <input type="submit" name="add-btn-z3p" value="Добавить" class="btn btn-default" >
 </form>

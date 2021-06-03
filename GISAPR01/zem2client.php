@@ -8,97 +8,114 @@ require_once "funclogin.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <style>
-    .table{width:100%;margin-bottom:1rem;}
-    .table td{padding:1rem;border-top:1px solid #dee2e6}
-    .table thead th{vertical-align:bottom;border-bottom:1px solid #dee2e6}
-    .table th{text-align:left;padding:1rem;border-top:1px solid #dee2e6 }        
-    </style>
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/site.css" rel="stylesheet">
     
-    <title>Ex 6</title>
+    <title>Новый клиент</title>
 </head>
 <body>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                   
-                </button>                
-            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li> <a href="index.php?fullobjpage=1"> К списку объектов</a></li>                    
-                    <li><a href="#">Рабочие справочники</a></li>
                     <li><a href="./phone.php" target="_blank">Телефонный справочник</a></li>                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- <li><a href="https://localhost:44315/Account/Register" id="registerLink">Регистрация</a></li> -->
                     <li><a href="../index.php" id="loginLink">Выход</a></li>
                 </ul>
-
             </div>
         </div>
-    </div>
+    </div> 
+    <!-- /*------------------*/ -->
     <br/>
-    <div class="container input-event-13" >
-    <div>
-    <label class="col-md-2 control-label" > Заказчик: </label>
-    <p class="col-md-10 " > <?= $data[0]['name'] ?> </p>
-    <br/>
-    <hr/>
-<div >
-    <form  method="post" novalidate="novalidate">      
-    <tr>
-    <td><label class="col-md-2 "> Объект: </label></td>
-    <td><input class="col-md-3 event-form" id="zemobj" name="zemobj" value="<?= $data[0]['ordername'] ?>"> </input></td>
-    <td><input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input></td>
-    <td><input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" ><td>
-      </tr>
-    </form>
-</div>
-    <br>
-    <form  method="post" novalidate="novalidate">      
-      <label class="col-md-2 control-label"> Место расположения участка: </label>
-      <input class="col-md-2 event-form" id="zemaddr" name="zemaddr" value="<?= $data[0]['orderaddress'] ?>"> </input>
-      <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
-      <input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" >
-    </form>
-    <br>
-    <form  method="post" novalidate="novalidate">      
-      <label class="col-md-2 control-label"> Объем работы: </label>
-      <input class="col-md-2 event-form" id="zemTD" name="zemTD" value="<?= $data[0]['typeorder'] ?>"> </input>
-      <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
-      <input type="submit" name="change-btn-z2p" value="Записать" class="btn btn-default" >
-    </form>  
-    
-    <hr/>
-    <label class="col-md-2 control-label" > Ход выполнения: </label>
-
-    <?php foreach($data as $item):?>
-    <p class="col-md-13" > <?= $item['event'] ?> : <?= $item['dataevent'] ?> </p> <br>
-    <?php endforeach;?>
-    <br/>
-    <hr/>    
-    <div >
-    <form  method="post" novalidate="novalidate">      
-      <label class="col-md-2 control-label"> Событие: </label>
-      <input class="col-md-2 event-form" id="zemevent" name="zemevent"> </input>
-      <input style="display: none" id="orderid" name="orderid" value="<?=  $ordersid ?>"> </input>
-      <input type="submit" name="add-btn-z3p" value="Добавить" class="btn btn-default" >
-</form>
-    </div>
-
-    <br/>
-    <hr/>
-    
-      <!-- <?php echo $log?> -->
-    <!-- <? print_r($data) ?> -->
-    </div>
+    <div class="container body-content">
+        <h2>Новый клиент:</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <section id="newClient">                
+                    <form class="form-horizontal" method="post" novalidate="novalidate">
+                        <div class="form-group">
+                            <label class="col-md-2 " >Название*</label>
+                            <div class="col-md-10">
+                                <input class="form-control" id="cl_name" name="cl_name">                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2" >Ид. код</label>
+                            <div class="col-md-10">
+                                <input class="form-control" id="cl_idnum" name="cl_idnum">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2">Юр. адрес</label>
+                            <div class="col-md-10">
+                                <input class="form-control" id="cl_address" name="cl_address">                                
+                            </div>
+                        </div>
+                        <hr>
+                        <h4>Контактное лицо:</h4>
+                        <div class="form-group">
+                            <label class="col-md-2">Название</label>
+                            <div class="col-md-10">
+                                <input class="form-control" id="cl_kontact" name="cl_kontact">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2">Телефон*</label>
+                            <div class="col-md-10">
+                                <input class="form-control" id="cl_k_phone" name="cl_k_phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2">email</label>
+                            <div class="col-md-10">
+                                <input class="form-control" id="cl_k_email" name="cl_k_email">
+                            </div>
+                        </div>
+                        <hr>
+                        <h4>Дополнительная информация / примечания:</h4>
+                        <div class="form-group">
+                            <label class="col-md-2">Примечание 1</label>
+                            <div class="col-md-10">
+                                <input class="form-control" id="cl_pr1" name="cl_pr1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2">Примечание 2</label>
+                            <div class="col-md-10">
+                                <input class="form-control" id="cl_pr2" name="cl_pr2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" name="btn_z2_cl" value=">>>  Записать  <<<" class="btn btn-default" >
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        
+            <div class="col-md-4">
+                <section id="socialLoginForm">
+                    <h4> Ввод данных для нового клиента.</h4>
+                        <hr>
+                        <div>
+                            <h4>Обязательные поля ввода: </h4>
+                            <p>Название клиента и Телефон</p>
+                            <hr>
+                            <h4>Используются 3 секции: </h4>
+                            <p>Общая информация: </p>
+                            <p>Во все поля допускается ввод до 255 символов.</p>
+                            <h4>Контактное лицо: </h4>
+                            <p>Ввод данных по контактному лицу или лицам (если несколько - разделитель писать: '< hr>' без пробела, то же самое и в телефонах и эл. почте)  </p>
+                            <h4>Дополнительная информация / примечания:</h4>
+                            <p>Любая нужная дополнительная информация</p>
+                        </div>
+                </section>
+            </div>
+        </div>
     </div>
 
 

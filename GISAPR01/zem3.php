@@ -12,8 +12,8 @@ require_once "funclogin.php";
     .table thead th{vertical-align:bottom;border-bottom:1px solid #dee2e6}
     .table th{text-align:left;padding:1rem;border-top:1px solid #dee2e6 }
     </style>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/site.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/site.css" rel="stylesheet">
     
     <title>Ex 6</title>
 </head>
@@ -34,7 +34,7 @@ require_once "funclogin.php";
                       <li> <a href="index.php?fullpage=<? echo $user ?>" >Полная информация</a></li>
 
                     <li><a href="#">Рабочие справочники</a></li>
-                    <li><a href="./phone.php">Телефонный справочник</a></li>                    
+                    <li><a href="./phone.php" target="_blank">Телефонный справочник</a></li>                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">                   
                     <li><a href="../index.php" id="loginLink">Выход</a></li>

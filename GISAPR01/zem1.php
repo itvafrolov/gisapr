@@ -19,7 +19,7 @@ require_once "funclogin.php";
     .table thead th{vertical-align:bottom;border-bottom:1px solid #dee2e6}
     .table th{text-align:left;padding:1rem;border-top:1px solid #dee2e6 }
     </style>
-    <!-- <link href="./css/bootstrap.css" rel="stylesheet"> -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/site.css" rel="stylesheet">
     
     <title>Ex 6</title>
