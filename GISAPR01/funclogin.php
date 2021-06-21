@@ -60,16 +60,43 @@ function zem3p ($ordersid, $page){
     require_once $page;
     }
 
-    function zem2(){
+    function zem200(){
         global $db;    
         $res = mysqli_query($db, "SELECT * FROM `orders` 
                                   INNER JOIN `clients` ON orders.clientid=clients.id
                                   INNER JOIN `ordersemlp` ON orders.id = ordersemlp.ordersid
-                                  INNER JOIN `employees` ON  ordersemlp.employid = employees.id");
+                                  INNER JOIN `employees` ON  ordersemlp.employid = employees.id");                                  
         $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
+        //print_r($data);
         require_once "zem2.php";
         }
     
+        /*---- второй вариант zem2  ----- */
+
+        /*
+        SELECT * FROM (SELECT id, typeorder, ordername, orderaddress, clientid, jobload FROM orders ) as work
+SELECT * FROM (SELECT id, typeorder, ordername, clientid, jobload FROM orders) as work
+SELECT  FROM clients 
+SELECT  FROM ordersemlp
+SELECT fullname FROM (SELECT id, fullname FROM employees) as empl 
+        
+        */
+
+
+        function zem2(){
+            global $db;    
+            $res = mysqli_query($db, "SELECT * FROM (SELECT id, numcontract, startcontract,typeorder, ordername, orderaddress, clientid, jobload FROM orders ) as work 
+                                      INNER JOIN (SELECT id as idcl, `name` FROM clients) as clnt ON work.clientid=clnt.idcl
+                                      INNER JOIN `ordersemlp` ON work.id = ordersemlp.ordersid
+                                      INNER JOIN (SELECT id as idempl, fullname FROM employees) as empl ON  ordersemlp.employid = empl.idempl
+                                      ");                                    
+            $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
+            print_r($data);
+            require_once "zem2.php";            
+            }
+    
+
+
 
 
 function save_zem_event($post)
@@ -153,5 +180,15 @@ function error101 (){
     echo '<h4> <span class="span-red2"> Данные не записаны!</span> </h4>';
     echo '</div>';
 }
+
+
+/*
+SELECT * FROM (SELECT id, typeorder, ordername, orderaddress, clientid, jobload FROM orders ) as work
+SELECT * FROM (SELECT id, typeorder, ordername, clientid, jobload FROM orders) as work
+SELECT  FROM clients 
+SELECT  FROM ordersemlp
+SELECT fullname FROM (SELECT id, fullname FROM employees) as empl 
+*/
+
 
 ?>

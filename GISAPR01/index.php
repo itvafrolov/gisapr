@@ -36,7 +36,7 @@ if(!empty($_POST))
     }
 
 
-    if($_POST['add-btn-z3p'] == 'Добавить')
+    if($_POST['add-btn-z3p'] == 'Добавить событие')
     {
         if(!empty($_POST['zemevent']) && !empty($_POST['orderid']))
         save_zem_event($_POST);
